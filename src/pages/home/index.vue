@@ -18,7 +18,9 @@
           </el-tooltip>
         </div>
     </div>
+    <div class="router_content">
      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -49,14 +51,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @mixin contentBorder{
+      max-width: 1600px;
+      margin-right: auto;
+      margin-left: auto;
+  }
   .menu_background {
     background-color: #545c64;
     box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
     .menu_container {
       display: flex;
-      max-width: 1280px;
-      margin-right: auto;
-      margin-left: auto;
+      @include contentBorder;
       align-items: center;
       flex-direction: row;
       img {
@@ -77,5 +82,8 @@ export default {
         margin-right: 2rem;
       }
     }
+  }
+  .router_content {
+    @include contentBorder;
   }
 </style>
